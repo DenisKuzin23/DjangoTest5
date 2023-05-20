@@ -1,0 +1,9 @@
+{% extends 'default.html' %}
+{% block content %}
+<h1 xmlns="http://www.w3.org/1999/html">Добавить новость</h1>
+<form action="createarticle" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div align="center">
+    {% if paginator %}
+        <a href="{% url 'npaged' 0 %}"><<</a>
+        {% for page in paginator %}
+        <a href="{% url 'npaged' page %}">{{ page }}</a>
+        {% endfor %}
+    {% endif %}
+</div>

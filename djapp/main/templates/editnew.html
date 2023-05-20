@@ -1,0 +1,10 @@
+{% extends 'default.html' %}
+{% block content %}
+<h1 xmlns="http://www.w3.org/1999/html">Редактировать новость</h1>
+<form action="editnew" method="post">
+    {% csrf_token %}
+    Автор: {{ author }}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+{% endblock %}

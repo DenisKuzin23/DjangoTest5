@@ -1,0 +1,8 @@
+{% extends 'default.html' %}
+{% load censor %}
+{% block content %}
+<h1>Статья:</h1>
+<p>Название: {{ post.topic }}</p>
+<p>Текст: {{ post.text|censor:"Создать"|censor:"рейтинг" }}</p>
+<p>Дата: {{ post.date.day }}.{{ post.date.month }}.{{ post.date.year }}</p>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'default.html' %}
+{% block content %}
+<h1>{{ header }}:</h1>
+<table align="center" style="width: 90%">
+    <tbody>
+        {% for post in post_list %}
+        <tr>
+            <td style="width: 20%">{{ post.topic }}</td><td style="width: 20%">{{ post.date }}</td>
+            <td><a href="{% url 'article' post.id %}">{{ post.preview }}</a></td>
+            <td><a href="{% url 'editarticle' post.id %}">Редактировать</a></td>
+            <td><a href="{% url 'deletearticle' post.id %}">Удалить</a></td>
+         </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<table>
+    <tr>
+        <td><a href="{% url 'addarticle' %}">Добавить статью</a></td>
+    </tr>
+</table>
+{% include 'apaginator.html' %}
+{% endblock %}

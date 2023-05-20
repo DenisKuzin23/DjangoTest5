@@ -1,0 +1,6 @@
+{% extends 'default.html' %}
+{% block content %}
+<a href="{% url 'newsindex' %}">Новости</a><br/>
+<a href="{% url 'articlesindex' %}">Статьи</a><br/>
+<a href="{% url 'newssearch' %}">Поиск новости</a><br/>
+{% endblock %}
